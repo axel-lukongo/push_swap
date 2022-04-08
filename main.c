@@ -2,13 +2,9 @@
 
 int main(int ac, char **av)
 {
-	int test;
-	test = check_digit(ac, av);
-	ft_printf("test = %d\n",test);
-	if (ac < 2)
+	if (ac < 2 || check_digit(ac, av) == 0)
 	{
 		ft_printf("Error\n");
 		return (0);
 	}
-	
 }
