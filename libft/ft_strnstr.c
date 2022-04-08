@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:57:16 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/29 13:25:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/08 17:04:50 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	tmp;
 
 	i = 0;
 	if (!*little)
@@ -25,7 +24,6 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		j = 0;
-		tmp = i;
 		while (big[i + j] && (big[i + j] == little[j]))
 		{
 			if (i + j >= len)

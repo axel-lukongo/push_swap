@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:18:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/04/08 16:11:42 by alukongo         ###   ########.fr        #
+#    Updated: 2022/04/08 17:58:48 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,6 @@ MANDATORY = ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			ft_lstadd_back_bonus.c\
-			ft_lstadd_front_bonus.c\
-			ft_lstclear_bonus.c\
-			ft_lstdelone_bonus.c\
-			ft_lstiter_bonus.c\
-			ft_lstlast_bonus.c\
-			ft_lstmap_bonus.c\
-			ft_lstnew_bonus.c\
-			ft_lstsize_bonus.c\
-			ft_list_reverse.c\
 			print_bit.c\
 			
 MANDATORY_SRCS	=	${MANDATORY}
