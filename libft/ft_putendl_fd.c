@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:21:55 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/01 16:58:19 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:00:58 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,8 @@ void	ft_putendl_fd(char *s, int fd)
 		ft_putchar_fd('\n', fd);
 	}
 }
+/*
+int main()
+{
+	ft_putendl_fd("  lorem\nipsum\rdolor\tsit amet  ", 1);
+}*/

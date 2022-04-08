@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:17:25 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/02 16:51:56 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:11:36 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@
 # include <string.h>
 # include <unistd.h>
 # include <ctype.h>
+#include "../ft_printf/ft_printf.h"
 
 void			*ft_memset(void *pointer, int value, size_t count);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *pointer1, const void *pointer2,
 					size_t size);
 
-size_t			ft_strlen(const char *str);
+int				ft_strlen(const char *str);
 char			*ft_strdup(const char *src);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *str, int c);
@@ -61,6 +63,7 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+int				print_bit(int ac, char **av);
 
 typedef struct s_list
 {
@@ -77,4 +80,5 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+void			ft_list_reverse(t_list **begin_list);
 #endif

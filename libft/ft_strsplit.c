@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:26:44 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/30 17:46:56 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:53:39 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 #include<stdio.h>
-//je ne gerais pas bien le cas ou il y'avais plusieur set a la fin 
-//donc j'avais une ligne en trop
-//je ne gerais pas bien le cas ou le charset etais un '\0'
-static int	length_word(const char *s, char c)
+
+int	length_word(char *s, char c)
 {
 	int	len;
 
@@ -27,21 +25,7 @@ static int	length_word(const char *s, char c)
 	return (len);
 }
 
-static char	**free_alloc(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (NULL);
-}
-
-static int	nb_word(const char *s, char c)
+int	nb_word(char *s, char c)
 {
 	int	word;
 	int	i;
@@ -52,7 +36,7 @@ static int	nb_word(const char *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i])
+		if (s[i] != c)
 		{
 			word++;
 			while (s[i] && s[i] != c)
@@ -62,7 +46,7 @@ static int	nb_word(const char *s, char c)
 	return (word);
 }
 
-static char	**writing(char **tab, const char *s, char c, int word)
+char	**writing(char **tab, char *s, char c, int word)
 {
 	int	i;
 	int	j;
@@ -75,7 +59,7 @@ static char	**writing(char **tab, const char *s, char c, int word)
 			s++;
 		tab[i] = malloc(sizeof(char) * (length_word(s, c) + 1));
 		if (!tab[i])
-			free_alloc(tab);
+			return (0);
 		j = 0;
 		while (*s && *s != c)
 		{
@@ -87,21 +71,16 @@ static char	**writing(char **tab, const char *s, char c, int word)
 	tab[i] = 0;
 	return (tab);
 }
-//good
 
-char	**ft_split(char const *s, char c)
+char	**ft_strsplit(char *s, char c)
 {
 	int			word;
 	char		**tab;
 
-	if (!s)
-		return (0);
 	word = nb_word(s, c);
-	while (*s == c)
-		s++;
 	tab = malloc(sizeof (char *) * (word + 1));
-	if (!tab)
-		free_alloc(tab);
+	if (!s || !tab)
+		return (0);
 	tab = writing(tab, s, c, word);
 	return (tab);
 }

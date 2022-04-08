@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 13:10:57 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/29 13:40:38 by alukongo         ###   ########.fr       */
+/*   Created: 2021/11/24 15:30:25 by alukongo          #+#    #+#             */
+/*   Updated: 2021/11/26 16:12:58 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include<stdio.h>
 #include"libft.h"
 //good
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	char	*str;
-	size_t	i;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
-	if (s && f)
+	if (s2[0] == 0)
+		return ((char *)s1);
+	while (s1[i])
 	{
-		while (s[i])
+		j = 0;
+		tmp = i;
+		while (s1[i + j] && s1[i + j] == s2[j])
+			j++;
+		if (s2[j] == '\0')
 		{
-			str[i] = f(i, s[i]);
-			i++;
+			return ((char *)s1 + i);
 		}
+		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (0);
 }

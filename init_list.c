@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   init_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 13:10:57 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/29 13:40:38 by alukongo         ###   ########.fr       */
+/*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
+/*   Updated: 2022/04/08 16:49:35 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-//good
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char	*str;
-	size_t	i;
+#include"push_swap.h"
 
-	i = 0;
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
-	if (s && f)
+void init_list(p_list *list, int ac, char **av)
+{
+	int i;
+	p_list *list2;
+	
+	i = 1;
+	list2 = list;
+	while (i < ac)
 	{
-		while (s[i])
-		{
-			str[i] = f(i, s[i]);
-			i++;
-		}
+		list->value = ft_atoi(av[i]);
+		list = list->next;
+		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	list = NULL;
+	print_list(ac, list2);
 }

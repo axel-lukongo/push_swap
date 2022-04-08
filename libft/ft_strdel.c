@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 13:10:57 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/29 13:40:38 by alukongo         ###   ########.fr       */
+/*   Created: 2021/11/24 12:33:45 by alukongo          #+#    #+#             */
+/*   Updated: 2021/11/26 12:57:21 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 //good
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_strdel(char **as)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
-	if (s && f)
+	if (as)
 	{
-		while (s[i])
-		{
-			str[i] = f(i, s[i]);
-			i++;
-		}
+		free(*as);
+		*as = NULL;
 	}
-	str[i] = '\0';
-	return (str);
 }

@@ -6,14 +6,14 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:45:29 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/01 16:57:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:48:37 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 //good
 //je negerais pas le cas où n = 0 
-static int	size_nbr(int n)
+int	size_nbr(int n)
 {
 	unsigned int	size;
 

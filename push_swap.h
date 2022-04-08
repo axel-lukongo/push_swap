@@ -6,15 +6,12 @@
 
 typedef struct m_list
 {
-	int val0;
-	int val1;
-	int val2;
-	int val3;
-	int val4;
-	struct s_list *next;
+	struct m_list *next;
+	int value;
 } p_list;
 
-int check_digit(int ac, char **av);
-
+int		check_digit(int ac, char **av);
+void	init_list(p_list *list, int ac, char **av);
+void	print_list(int ac, p_list *beta);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
 

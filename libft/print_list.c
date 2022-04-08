@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 13:10:57 by alukongo          #+#    #+#             */
-/*   Updated: 2021/11/29 13:40:38 by alukongo         ###   ########.fr       */
+/*   Created: 2021/11/24 12:19:53 by alukongo          #+#    #+#             */
+/*   Updated: 2022/04/08 16:00:49 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
+#include<stdio.h>
 //good
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	print_list(t_list *beta)
 {
-	char	*str;
-	size_t	i;
+	int	*c;
 
-	i = 0;
-	str = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!str)
-		return (NULL);
-	if (s && f)
+	while (beta)
 	{
-		while (s[i])
-		{
-			str[i] = f(i, s[i]);
-			i++;
-		}
+		c = beta->content;
+		printf("[%d]--->", *c);
+		beta = beta->next;
 	}
-	str[i] = '\0';
-	return (str);
+	printf("NULL");
+	printf("\n");
 }

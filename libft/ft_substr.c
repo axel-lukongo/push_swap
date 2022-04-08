@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:39:43 by alukongo          #+#    #+#             */
-/*   Updated: 2021/12/01 17:06:43 by alukongo         ###   ########.fr       */
+/*   Updated: 2021/11/30 17:14:45 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	size_t	size;
 
 	if (!(s))
+	{
 		return (0);
-	size = (unsigned int)ft_strlen(&s[start]);
+	}
 	if (start > (unsigned int) ft_strlen(s))
-		return (ft_strdup(""));
-	if (len > (size_t)size)
-		len = size;
+	{
+		return (ft_calloc(1, sizeof(char)));
+	}
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);

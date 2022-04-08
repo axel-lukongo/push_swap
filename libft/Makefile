@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 16:18:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/04/07 21:14:58 by alukongo         ###   ########.fr        #
+#    Updated: 2022/04/08 16:11:42 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ MANDATORY = ft_atoi.c\
 			ft_isdigit.c\
 			ft_isprint.c\
 			ft_itoa.c\
+			ft_memccpy.c\
 			ft_memchr.c\
 			ft_memcmp.c\
 			ft_memcpy.c\
@@ -50,17 +51,18 @@ MANDATORY = ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			ft_lstadd_back.c\
-			ft_lstadd_front.c\
-			ft_lstclear.c\
-			ft_lstdelone.c\
-			ft_lstiter.c\
-			ft_lstlast.c\
-			ft_lstmap.c\
-			ft_lstnew.c\
-			ft_lstsize.c\
-
-
+			ft_lstadd_back_bonus.c\
+			ft_lstadd_front_bonus.c\
+			ft_lstclear_bonus.c\
+			ft_lstdelone_bonus.c\
+			ft_lstiter_bonus.c\
+			ft_lstlast_bonus.c\
+			ft_lstmap_bonus.c\
+			ft_lstnew_bonus.c\
+			ft_lstsize_bonus.c\
+			ft_list_reverse.c\
+			print_bit.c\
+			
 MANDATORY_SRCS	=	${MANDATORY}
 
 BONUS_SRCS	=	${BONUS}
@@ -69,7 +71,7 @@ MANDATORY_OBJS	= ${MANDATORY_SRCS:.c=.o}
 
 BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
 
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
