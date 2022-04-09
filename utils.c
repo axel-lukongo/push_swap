@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/09 02:39:28 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/09 03:00:16 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ t_list *ft_list_push_strs(int size, char **strs)
 		element->next = last_element;
 		last_element = element;
 	}
+	last_element = element;
+	element = element->next;
+	free(last_element);
 	return(element);
 }
