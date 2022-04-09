@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/09 03:00:16 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/09 03:04:22 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@ void	print_list(int ac ,t_list *beta)
 	printf("\n");
 }
 
-t_list	*ft_lstnew(int content)
+void free_list(t_list *list)
 {
-	t_list	*ptr;
+	t_list *list2;
 
-	ptr = malloc(sizeof(t_list));
-	if (!ptr)
-		return (0);
-	ptr->next = 0;
-	ptr->value = content;
-	return (ptr);
+	list2 = list->next;
+	while (list2)
+	{
+		free(list);
+		list = list2;
+		list2 = list2->next;
+	}
+	free(list);
 }
 
 t_list *ft_create_elem(int value)
