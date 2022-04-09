@@ -16,5 +16,6 @@ void	print_list(int ac, t_list *beta);
 void 	free_list(t_list *list);
 t_list *ft_create_elem(int value);
 t_list *ft_list_push_strs(int size,char **strs);
+int		check_content(int ac, char **av);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
 

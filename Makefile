@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/04/08 16:26:21 by alukongo         ###   ########.fr        #
+#    Updated: 2022/04/09 12:44:09 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ BONUS_SRCS	=	${BONUS}
 
 MANDATORY_OBJS	= ${MANDATORY_SRCS:.c=.o}
 
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=address
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
