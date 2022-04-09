@@ -11,8 +11,10 @@ typedef struct s_list
 } t_list;
 
 int		check_digit(int ac, char **av);
-void	init_list(t_list *list, int ac, char **av);
+void	init_list(t_list **list, int ac, char **av);
 void	print_list(int ac, t_list *beta);
 t_list	*ft_lstnew(int content);
+t_list *ft_create_elem(int value);
+t_list *ft_list_push_strs(int size,char **strs);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
 

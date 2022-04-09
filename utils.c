@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/08 18:05:21 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/09 02:39:28 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 void	print_list(int ac ,t_list *beta)
 {
-	int	c;
-
-	while (--ac)
+	(void) ac;
+	while (beta)
 	{
-		c = beta->value;
-		ft_printf("[%d]--->", c);
+		printf("[%d]--->", beta->value);
 		beta = beta->next;
 	}
-	ft_printf("NULL");
-	ft_printf("probleme");
-	ft_printf("\n");
+	printf("NULL");
+	printf("\n");
 }
 
 t_list	*ft_lstnew(int content)
@@ -37,4 +34,32 @@ t_list	*ft_lstnew(int content)
 	ptr->next = 0;
 	ptr->value = content;
 	return (ptr);
+}
+
+t_list *ft_create_elem(int value)
+{
+	t_list *pwd;
+	if(!(pwd = malloc(sizeof(t_list))))
+		return(0);
+	pwd -> next = NULL;
+	pwd -> value = value;
+	//printf("%s\n",pwd ->value);
+	return(pwd);
+}
+
+t_list *ft_list_push_strs(int size, char **strs)
+{
+	t_list *element;
+	t_list *last_element;
+	int i;
+	i = 0;
+	last_element = 0;
+	while (i < size)
+	{
+		size--;
+		element = ft_create_elem(ft_atoi(strs[size]));
+		element->next = last_element;
+		last_element = element;
+	}
+	return(element);
 }
