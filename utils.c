@@ -6,15 +6,14 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/09 15:04:24 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:06:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	print_list(int ac ,t_list *beta)
+void	print_list(t_list *beta)
 {
-	(void) ac;
 	while (beta)
 	{
 		printf("[%d]--->", beta->value);
@@ -37,4 +36,3 @@ void free_list(t_list *list)
 	}
 	free(list);
 }
-
