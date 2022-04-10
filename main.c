@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/10 16:47:46 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:50:23 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int main(int ac, char **av)
 	print_list(list_a);
 	print_list(list_b);
 	free_list(list_a);
+	free_list(list_b);
 	return (1);
 }
