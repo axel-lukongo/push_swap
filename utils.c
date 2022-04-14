@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/10 15:17:34 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/14 18:47:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,4 @@ t_list *ft_list_push_front(t_list **begin_list, t_list *list)
 		}
 	return (*begin_list);
 }
+

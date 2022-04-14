@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/09 15:04:46 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/14 18:57:51 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,36 @@ t_list *ft_list_push_strs(int size, char **strs)
 	element = element->next;
 	free(last_element);
 	return(element);
+}
+
+int	find_median(int ac, int *tab)
+{
+	int pos_median;
+	int median;
+	
+	if (ac % 2 == 1)
+		pos_median = ac / 2;
+	if (ac % 2 == 0)
+		pos_median = ac / 2 - 1;
+	median = tab[pos_median];
+	return (median);
+}
+
+int	find_biggest_value(int ac, int *tab)
+{
+	int	i;
+	int	value;
+	int	next_value;
+
+	value = 0;
+	next_value = 1;
+	i = 0;
+	while (next_value < ac)
+	{
+		if (tab[i] < tab[next_value])
+			i = next_value;
+		next_value++;
+	}
+	value = tab[i];
+	return (value);
 }

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_algorithme.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 18:18:22 by alukongo         ###   ########.fr       */
+/*   Created: 2022/04/13 18:38:43 by alukongo          #+#    #+#             */
+/*   Updated: 2022/04/13 20:54:26 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int main(int ac, char **av)
+void three_value(t_list **list)
 {
-	t_list *list_a;
-	t_list *list_b;
-	if (ac < 2 || check_digit(ac, av) == 0 || check_content(ac, av) == 0)
+	int		i;
+	t_list	*tmp;
+
+	i = 0;
+	tmp = (*list);
+	while (check_sort(list) == 0)
 	{
-		ft_printf("Error\n");
-		return (0);
+		
 	}
-	list_a = ft_list_push_strs(ac, av);
-	list_b = ft_list_push_strs(ac, av);
-	init(ac, av, &list_a);
-	free_list(list_a);
-	free_list(list_b);
-	return (1);
 }

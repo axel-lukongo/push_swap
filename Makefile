@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/04/09 15:26:08 by alukongo         ###   ########.fr        #
+#    Updated: 2022/04/13 18:37:40 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,11 @@ NAME = push_swap
 
 MANDATORY = parsing.c\
 			main.c\
-			sort.c\
+			sort_function.c\
 			utils.c\
 			init_list.c\
+			utils2.c\
+			sort_algorithme.c\
 
 MANDATORY_SRCS	=	${MANDATORY}
 
