@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 18:39:36 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/14 19:02:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ int		check_sort(t_list **list);
 int		init(int ac, char **av, t_list **list);
 void	ft_sort_int_tab(int *tab, int size);
 int		find_median(int ac, int *tab);
-int		find_biggest_value(int *tab);
+int		find_biggest_value(int ac, int *tab);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H

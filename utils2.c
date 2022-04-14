@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 18:38:58 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/14 19:02:25 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	init(int ac, char **av, t_list **list)
 	(*list)->tab[i] = '\0';
 	ft_sort_int_tab((*list)->tab, ac - 1);
 	(*list)->median = find_median(ac - 1, (*list)->tab);
-	(*list)->biggest_value = find_biggest_value((*list)->tab);
-	printf("(*list)->median = %d", (*list)->median);
+	(*list)->biggest_value = find_biggest_value(ac - 1, (*list)->tab);
+	//printf("(*list)->median = %d", (*list)->median);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 18:57:51 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/14 19:01:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int	find_biggest_value(int ac, int *tab)
 		next_value++;
 	}
 	value = tab[i];
+	printf("value = %d", value);
 	return (value);
 }
