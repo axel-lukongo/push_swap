@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 19:02:25 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/15 19:43:03 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,12 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int	init(int ac, char **av, t_list **list)
+t_list *ft_create_elem(int value)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = i + 1;
-	(*list)->tab = malloc(sizeof(int) * ac + 1);
-	while (av[j])
-		(*list)->tab[i++] = ft_atoi(av[j++]);
-	(*list)->tab[i] = '\0';
-	ft_sort_int_tab((*list)->tab, ac - 1);
-	(*list)->median = find_median(ac - 1, (*list)->tab);
-	(*list)->biggest_value = find_biggest_value(ac - 1, (*list)->tab);
-	//printf("(*list)->median = %d", (*list)->median);
-	return (1);
+	t_list *pwd;
+	if(!(pwd = malloc(sizeof(t_list))))
+		return(0);
+	pwd -> next = NULL;
+	pwd -> value = value;
+	return(pwd);
 }

@@ -6,21 +6,11 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 19:01:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/15 19:27:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-
-t_list *ft_create_elem(int value)
-{
-	t_list *pwd;
-	if(!(pwd = malloc(sizeof(t_list))))
-		return(0);
-	pwd -> next = NULL;
-	pwd -> value = value;
-	return(pwd);
-}
 
 t_list *ft_list_push_strs(int size, char **strs)
 {
@@ -71,6 +61,22 @@ int	find_biggest_value(int ac, int *tab)
 		next_value++;
 	}
 	value = tab[i];
-	printf("value = %d", value);
 	return (value);
+}
+
+int	init(int ac, char **av, t_list **list)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = i + 1;
+	(*list)->tab = malloc(sizeof(int) * ac + 1);
+	while (av[j])
+		(*list)->tab[i++] = ft_atoi(av[j++]);
+	(*list)->tab[i] = '\0';
+	ft_sort_int_tab((*list)->tab, ac - 1);
+	(*list)->median = find_median(ac - 1, (*list)->tab);
+	(*list)->biggest_value = find_biggest_value(ac - 1, (*list)->tab);
+	return (1);
 }

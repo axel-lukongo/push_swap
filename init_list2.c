@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_list2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/15 20:18:15 by alukongo         ###   ########.fr       */
+/*   Created: 2022/04/15 13:49:46 by alukongo          #+#    #+#             */
+/*   Updated: 2022/04/15 20:04:47 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int main(int ac, char **av)
+int	cost_move(t_list **list)
 {
-	t_list *list_a;
-	t_list *list_b;
-	if (ac < 2 || check_digit(ac, av) == 0 || check_content(ac, av) == 0)
+	int	i;
+	int	size;
+	t_list *tmp;
+
+	tmp = *list;
+	i = 0;
+	size = ft_list_size(tmp);
+	while (i < size)
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (i >= size / 2)
+			tmp->nb_move = (size - i);
+		else
+			tmp->nb_move = i;
+		printf("value = %d, cost = %d\n", tmp->value, tmp->nb_move);
+		i++;
+		tmp = tmp->next;
 	}
-	list_a = ft_list_push_strs(ac, av);
-	list_b = ft_list_push_strs(ac, av);
-	init(ac, av, &list_a);
-	cost_move(&list_a);
-	free_list(list_a);
-	free_list(list_b);
 	return (1);
 }
