@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/15 20:18:15 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/17 04:11:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(int ac, char **av)
 	list_a = ft_list_push_strs(ac, av);
 	list_b = ft_list_push_strs(ac, av);
 	init(ac, av, &list_a);
-	cost_move(&list_a);
+	three_value(&list_a);
+	//cost_move(&list_a);
 	free_list(list_a);
 	free_list(list_b);
 	return (1);
