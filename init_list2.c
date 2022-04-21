@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:49:46 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/15 20:04:47 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/17 17:02:25 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	cost_move(t_list **list)
 			tmp->nb_move = (size - i);
 		else
 			tmp->nb_move = i;
-		printf("value = %d, cost = %d\n", tmp->value, tmp->nb_move);
+		//printf("value = %d, cost = %d\n", tmp->value, tmp->nb_move);
 		i++;
 		tmp = tmp->next;
 	}
