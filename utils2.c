@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/15 19:43:03 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/25 22:18:50 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_sort(t_list **list)
 	}
 	return (1);
 }
-
+/*
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
@@ -70,7 +70,7 @@ void	ft_sort_int_tab(int *tab, int size)
 		}
 	}
 }
-
+*/
 t_list *ft_create_elem(int value)
 {
 	t_list *pwd;

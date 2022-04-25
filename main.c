@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/21 19:10:02 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:01:43 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int main(int ac, char **av)
 		list_a = ft_list_push_strs(ac, av);
 		three_value(&list_a);
 		free_list(list_a);
-	}	
+	}
 	else if (ac == 5 || ac == 6)
 		sort_five(ac, av);
+	else if (ac > 6)
+		sort_all(ac, av);
 	return (1);
 }

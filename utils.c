@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/14 18:47:56 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/25 22:18:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_list(t_list *beta)
 	printf("\n");
 }
 
-void free_list(t_list *list)
+void	free_list(t_list *list)
 {
 	t_list *list2;
 
@@ -37,7 +37,7 @@ void free_list(t_list *list)
 	free(list);
 }
 
-t_list *ft_list_push_back(t_list **begin_list, t_list *list)
+t_list	*ft_list_push_back(t_list **begin_list, t_list *list)
 {
 	t_list *li;
 	li = *begin_list;
@@ -57,7 +57,7 @@ t_list *ft_list_push_back(t_list **begin_list, t_list *list)
 	return(*begin_list);
 }
 
-t_list *ft_list_push_front(t_list **begin_list, t_list *list)
+t_list	*ft_list_push_front(t_list **begin_list, t_list *list)
 {
 	t_list *li;
 
@@ -72,4 +72,3 @@ t_list *ft_list_push_front(t_list **begin_list, t_list *list)
 		}
 	return (*begin_list);
 }
-

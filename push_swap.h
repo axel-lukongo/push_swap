@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/21 17:17:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/25 21:24:49 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ typedef struct s_list
 {
 	struct s_list *next;
 	int value;
-	int	median;
-	int	biggest_value;
+	int	sempai;
 	int	distance;
 	int	nb_move;
-	int *tab;
+	int	*tab;
+	int *tab_lis;
 } t_list;
 
 int		check_digit(int ac, char **av);
 void	init_list(t_list **list, int ac, char **av);
 void	print_list(t_list *beta);
-void 	free_list(t_list *list);
+void	free_list(t_list *list);
 t_list	*ft_create_elem(int value);
 t_list	*ft_list_push_strs(int size,char **strs);
 t_list	*ft_list_push_back(t_list **begin_list, t_list *list);
@@ -43,11 +43,12 @@ void	sort_r(t_list **list, char c);
 void	sort_rr(t_list **list, char c);
 int		ft_list_size(t_list *begin_list);
 int		check_sort(t_list **list);
-int		init(int ac, char **av, t_list **list);
-void	ft_sort_int_tab(int *tab, int size);
-int		find_median(int ac, int *tab);
-int		find_biggest_value(int ac, int *tab);
-int		cost_move(t_list **list);
+int		init_tab(int ac, char **av, t_list **list);
+//void	ft_sort_int_tab(int *tab, int size);
+//int		find_median(int ac, int *tab);
+int		lis_pos(int ac, int *tab);
+int		cost_move_a(t_list **list);
 void	three_value(t_list **list);
 void	sort_five(int ac, char **av);
+void	sort_all(int ac, char **av);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
