@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/25 21:24:49 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:53:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct s_list
 	int	distance;
 	int	nb_move;
 	int	*tab;
-	int *tab_lis;
+	int	*tab_lis;
+	int	size_lis;
 } t_list;
 
 int		check_digit(int ac, char **av);
@@ -51,4 +52,5 @@ int		cost_move_a(t_list **list);
 void	three_value(t_list **list);
 void	sort_five(int ac, char **av);
 void	sort_all(int ac, char **av);
+void	send_to_b(t_list **list_a, t_list **list_b, int	*tab, int size_lis);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
