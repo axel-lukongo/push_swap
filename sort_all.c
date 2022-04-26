@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/26 20:55:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/26 23:45:41 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	sort_all(int ac, char **av)
 		list_a->tab_lis = find_lis(list_a, &list_a);
 		cost_move_a(&list_a);
 		send_to_b(&list_a, &list_b, list_a->tab_lis, list_a->size_lis);
+		print_list(list_b);
 	}
 	free_list(list_a);
 	return ;
