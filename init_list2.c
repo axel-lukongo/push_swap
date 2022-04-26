@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:49:46 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/25 20:07:58 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/26 23:58:54 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int	cost_move_a(t_list **list_a)
 	while (i < size)
 	{
 		if (i >= size / 2)
-			tmp->nb_move = (size - i);
+			tmp->cost_move = (size - i);
 		else
-			tmp->nb_move = i;
+			tmp->cost_move = i;
 		i++;
 		tmp = tmp->next;
 	}

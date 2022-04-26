@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/26 20:53:38 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/26 23:56:46 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 	int value;
 	int	sempai;
 	int	distance;
-	int	nb_move;
+	int	cost_move;
 	int	*tab;
 	int	*tab_lis;
 	int	size_lis;
