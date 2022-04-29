@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/27 00:11:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:41:54 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /**
  * @brief 
-	1) search the element in list_a == value, when i found it icheck
+	1) search the element in list_a the list_a->value == value,
+	when i found it icheck
 	the cost_move
 	2) if cost_move > size_list/2 i RRA while(*list->value != value)
 	3) else i RA while (*list->value != value)
@@ -31,10 +32,10 @@ void	pb_condition(t_list **list_a, t_list **list_b, int value)
 	{
 		if (tmp->cost_move > ft_list_size(tmp) / 2)
 			while ((*list_a)->value != value)
-				sort_rr(list_a, 'a');
+				sort_r(list_a, 1, 'a');
 		else
 			while ((*list_a)->value != value)
-				sort_r(list_a, 'a');
+				sort_r(list_a, 1, 'a');
 		sort_p(list_b, list_a, 'b');
 	}
 }
@@ -60,10 +61,10 @@ void	send_to_b(t_list **list_a, t_list **list_b, int *tab, int size_lis)
 	{
 			while (j < size_lis && tab[j] != tmp->value)
 				j++;
-			if (tab[j] == tmp->value)
+			if (j >= size_lis)
 			{
 				cost_move_a(list_a);
-				pb_condition(list_a, list_b, tab[j]);
+				pb_condition(list_a, list_b, tmp->value);
 				tmp = *list_a;
 			}
 			else

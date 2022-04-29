@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:37:58 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/21 18:43:19 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/29 17:59:51 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,18 @@ void	sort_p(t_list **list1, t_list **list2, char c)
 	ft_printf("p%c\n",c);
 }
 
-void	sort_r(t_list **list, char c)
+void	sort_r(t_list **list, int i, char c)
 {
 	t_list	*tmp;
 
 	tmp = (*list)->next;
 	(*list)->next = NULL;
 	*list = ft_list_push_back(&tmp, *list);
-	ft_printf("r%c\n",c);
+	if (i > 0)
+		ft_printf("r%c\n",c);
 }
 
-void	sort_rr(t_list **list, char c)
+void	sort_rr(t_list **list, int i, char c)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -64,5 +65,6 @@ void	sort_rr(t_list **list, char c)
 		tmp2 = tmp2->next;
 	tmp2->next = NULL;
 	*list = ft_list_push_front(list, tmp);
-	ft_printf("rr%c\n",c);
+	if (i > 0)
+		ft_printf("rr%c\n",c);
 }

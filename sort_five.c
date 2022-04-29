@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:24:11 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/21 19:13:37 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/04/29 18:04:16 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void send_small_value(int smallest, t_list **list_a, t_list **list_b)
 	}
 	if (i > size / 2)
 		while (i++ < size)
-			sort_rr(list_a, 'a');
+			sort_r(list_a, 1, 'a');
 	else
 		while (i--)
-			sort_r(list_a, 'a');
+			sort_r(list_a, 1, 'a');
 	sort_p(list_b, list_a, 'b');
 }
 
