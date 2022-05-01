@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 00:11:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 00:55:03 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,8 @@ int	init_tab(int ac, char **av, t_list **list)
 int	lis_pos(int ac, int *tab)
 {
 	int	i;
-	int	value;
 	int	next_value;
 
-	value = 0;
 	next_value = 1;
 	i = 0;
 	while (next_value < ac)
@@ -63,6 +61,5 @@ int	lis_pos(int ac, int *tab)
 			i = next_value;
 		next_value++;
 	}
-	value = tab[i];
 	return (i);
 }

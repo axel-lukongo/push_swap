@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 18:38:43 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/29 18:02:17 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 00:59:04 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ void other_case(t_list **list)
 
 void three_value(t_list **list)
 {
-	int		i;
 	t_list	*tmp;
 
-	i = 0;
 	tmp = (*list);
 	if (check_sort(list) == 0)
 	{
@@ -63,6 +61,5 @@ void three_value(t_list **list)
 		{
 			other_case(list);
 		}
-		//print_list(*list);
 	}
 }
