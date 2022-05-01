@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 01:02:10 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:56:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	*lis_value(t_list *list, int *tab, int lis_pos)
 		j++;
 	}
 	tab_lis[i] = list->tab[lis_pos];
+	free(tab);
 	return (tab_lis);
 }
 
@@ -82,6 +83,7 @@ int	*find_lis(t_list *list, t_list **list_a)
 
 void	sort_all(int ac, char **av)
 {
+	int		value;
 	t_list *list_a;
 	t_list *list_b;
 	list_a = ft_list_push_strs(ac, av);
@@ -91,11 +93,12 @@ void	sort_all(int ac, char **av)
 		list_a->tab_lis = find_lis(list_a, &list_a);
 		if (list_a->tab_lis)
 		{
+			value = list_a->value;
 			send_to_b(&list_a, &list_b, list_a->tab_lis, list_a->size_lis);
 			send_to_a(&list_a, &list_b);
 		}
 	}
 	print_list(list_a);
-	free_list(list_a);
+	free_list(list_a, value, 1);
 	return ;
 }

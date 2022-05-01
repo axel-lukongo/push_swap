@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 00:11:35 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:55:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_list
 int		check_digit(int ac, char **av);
 void	init_list(t_list **list, int ac, char **av);
 void	print_list(t_list *beta);
-void	free_list(t_list *list);
+void	free_list(t_list *list, int value, int flag);
 t_list	*ft_create_elem(int value);
 t_list	*ft_list_push_strs(int size,char **strs);
 t_list	*ft_list_push_back(t_list **begin_list, t_list *list);

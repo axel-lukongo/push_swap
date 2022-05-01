@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 01:05:09 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:55:34 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,17 @@ void	print_list(t_list *beta)
 	printf("\n");
 }
 
-void	free_list(t_list *list)
+void	free_list(t_list *list, int value, int flag)
 {
 	t_list *list2;
 
 	list2 = list->next;
 	while (list2)
 	{
+		if (list->value == value && flag == 1)
+			free(list->tab_lis);
+		if (list->value == value && flag == 1)
+			free(list->tab);
 		free(list);
 		list = list2;
 		list2 = list2->next;

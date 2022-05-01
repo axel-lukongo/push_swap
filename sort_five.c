@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:24:11 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/29 18:04:16 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:57:27 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void sort_five(int ac, char **av)
 			sort_p(&list_a, &list_b, 'a');
 		print_list(list_a);
 	}
+	free_list(list_a, 0, 0);
 }
