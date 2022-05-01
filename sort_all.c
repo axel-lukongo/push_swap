@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 00:13:11 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 00:26:39 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	*lis_value(t_list *list, int *tab, int lis_pos)
 	int i;
 	
 	tab_lis = malloc(sizeof(int) * lis_pos + 1);
+	if (!tab_lis)
+		return (0);
 	tab[lis_pos] = 1;
 	j = 0;
 	i = 0;
@@ -87,9 +89,11 @@ void	sort_all(int ac, char **av)
 	if (init_tab(ac, av, &list_a))
 	{
 		list_a->tab_lis = find_lis(list_a, &list_a);
-		cost_move_a(&list_a);
-		send_to_b(&list_a, &list_b, list_a->tab_lis, list_a->size_lis);
-		send_to_a(&list_a, &list_b);
+		if (list_a->tab_lis)
+		{
+			send_to_b(&list_a, &list_b, list_a->tab_lis, list_a->size_lis);
+			send_to_a(&list_a, &list_b);
+		}
 	}
 	print_list(list_a);
 	free_list(list_a);
