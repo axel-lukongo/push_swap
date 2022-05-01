@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/30 01:41:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/01 21:04:39 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	send_to_b(t_list **list_a, t_list **list_b, int *tab, int size_lis)
 	{
 			while (j < size_lis && tab[j] != tmp->value)
 				j++;
-			if (j >= size_lis)
+			if (j >= size_lis && tab[j] != tmp->value)
 			{
 				cost_move_a(list_a);
 				pb_condition(list_a, list_b, tmp->value);

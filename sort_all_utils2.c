@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/30 01:33:20 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:52:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,24 +82,25 @@ void shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
 			sort_rr(list_a,1, 'a');
 	else
 		while ((*list_a)->value != value_a)
-			sort_rr(list_a, 1, 'a');
+			sort_r(list_a, 1, 'a');
 }
 
 void shift_elem(t_list **list_a, t_list **list_b, int value_a, int value_b)
 {
-	/*if ((*list_a)->index > ft_list_size(*list_a) / 2
+	if ((*list_a)->index > ft_list_size(*list_a) / 2
 	&& (*list_b)->index > ft_list_size(*list_b) / 2)
 		while ((*list_b)->value != value_b && (*list_a)->value != value_a)
 		{
 				sort_rr(list_b, 0, 'r');			
 				sort_rr(list_a,1, 'r');
 		}
-	else
+	else if ((*list_a)->index < ft_list_size(*list_a) / 2
+	&& (*list_b)->index < ft_list_size(*list_b) / 2)
 		while ((*list_b)->value != value_b && (*list_a)->value != value_a)
 		{
 				sort_r(list_a, 0, 'r');
 				sort_r(list_b, 1, 'r');
-		}*/
+		}
 	shift_elem2(list_a, list_b, value_a, value_b);
 }
 
@@ -158,5 +159,4 @@ void send_to_a(t_list **list_a, t_list **list_b)
 	else
 		while ((*list_a)->value != smallest)
 			sort_r(list_a, 1, 'a');
-	//print_list(*list_a);
 }
