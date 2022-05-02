@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/05/02 00:50:08 by alukongo         ###   ########.fr        #
+#    Updated: 2022/05/02 14:17:32 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ BONUS_SRCS	=	${BONUS}
 
 MANDATORY_OBJS	= ${MANDATORY_SRCS:.c=.o}
 
-CFLAGS	= -g -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Werror -Wextra
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

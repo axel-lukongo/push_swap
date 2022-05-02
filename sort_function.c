@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:37:58 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/29 17:59:51 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:13:30 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	sort_s(t_list **list, char c)
 {
-	t_list *list2;
+	t_list	*list2;
+
 	list2 = (*list)->next;
 	(*list)->next = list2->next;
 	list2->next = *list;
 	*list = list2;
-	ft_printf("s%c\n",c);
+	ft_printf("s%c\n", c);
 }
 /*
 t_list	cort_ss(t_list *list_a, t_list *list_b)
@@ -29,7 +30,6 @@ t_list	cort_ss(t_list *list_a, t_list *list_b)
 	return (list_a);
 }*/
 
-
 void	sort_p(t_list **list1, t_list **list2, char c)
 {
 	t_list	*tmp;
@@ -38,7 +38,7 @@ void	sort_p(t_list **list1, t_list **list2, char c)
 	(*list2)->next = *list1;
 	*list1 = *list2;
 	*list2 = tmp;
-	ft_printf("p%c\n",c);
+	ft_printf("p%c\n", c);
 }
 
 void	sort_r(t_list **list, int i, char c)
@@ -49,7 +49,7 @@ void	sort_r(t_list **list, int i, char c)
 	(*list)->next = NULL;
 	*list = ft_list_push_back(&tmp, *list);
 	if (i > 0)
-		ft_printf("r%c\n",c);
+		ft_printf("r%c\n", c);
 }
 
 void	sort_rr(t_list **list, int i, char c)
@@ -66,5 +66,5 @@ void	sort_rr(t_list **list, int i, char c)
 	tmp2->next = NULL;
 	*list = ft_list_push_front(list, tmp);
 	if (i > 0)
-		ft_printf("rr%c\n",c);
+		ft_printf("rr%c\n", c);
 }

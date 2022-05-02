@@ -6,17 +6,18 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 00:55:03 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:01:12 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-t_list *ft_list_push_strs(int size, char **strs)
+t_list	*ft_list_push_strs(int size, char **strs)
 {
-	t_list *element;
-	t_list *last_element;
-	int i;
+	t_list	*element;
+	t_list	*last_element;
+	int		i;
+
 	i = 0;
 	last_element = 0;
 	while (i < size)
@@ -29,7 +30,7 @@ t_list *ft_list_push_strs(int size, char **strs)
 	last_element = element;
 	element = element->next;
 	free(last_element);
-	return(element);
+	return (element);
 }
 
 int	init_tab(int ac, char **av, t_list **list)
@@ -41,7 +42,7 @@ int	init_tab(int ac, char **av, t_list **list)
 	j = i + 1;
 	(*list)->tab = malloc(sizeof(int) * ac + 1);
 	if (!(*list)->tab)
-		return(0);
+		return (0);
 	while (av[j])
 		(*list)->tab[i++] = ft_atoi(av[j++]);
 	(*list)->tab[i] = '\0';

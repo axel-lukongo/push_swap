@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:24:11 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 01:57:27 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:12:48 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	find_smallest(t_list *list)
 {
-	t_list *tmp;
-	int value;
+	t_list	*tmp;
+	int		value;
 
 	tmp = list;
 	value = tmp->value;
@@ -28,11 +28,12 @@ int	find_smallest(t_list *list)
 	return (value);
 }
 
-void send_small_value(int smallest, t_list **list_a, t_list **list_b)
+void	send_small_value(int smallest, t_list **list_a, t_list **list_b)
 {
-	int	i;
-	int	size;
-	t_list *tmp;
+	int		i;
+	int		size;
+	t_list	*tmp;
+
 	(void) list_b;
 	tmp = *list_a;
 	i = 0;
@@ -51,12 +52,12 @@ void send_small_value(int smallest, t_list **list_a, t_list **list_b)
 	sort_p(list_b, list_a, 'b');
 }
 
-void sort_five(int ac, char **av)
+void	sort_five(int ac, char **av)
 {
-	t_list *list_a;
-	t_list *list_b;
-	int	size;
-	int small_value;
+	t_list	*list_a;
+	t_list	*list_b;
+	int		size;
+	int		small_value;
 
 	list_a = ft_list_push_strs(ac, av);
 	list_b = NULL;

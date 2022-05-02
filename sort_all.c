@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 01:56:18 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:11:31 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	*init_to_one(int *tab, int size)
 	i = 0;
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
-		return(NULL);
+		return (NULL);
 	while (i < size)
 	{
 		tab[i] = 1;
@@ -31,9 +31,9 @@ int	*init_to_one(int *tab, int size)
 int	*lis_value(t_list *list, int *tab, int lis_pos)
 {
 	int	j;
-	int *tab_lis;
-	int i;
-	
+	int	*tab_lis;
+	int	i;
+
 	tab_lis = malloc(sizeof(int) * lis_pos + 1);
 	if (!tab_lis)
 		return (0);
@@ -43,11 +43,11 @@ int	*lis_value(t_list *list, int *tab, int lis_pos)
 	while (j < lis_pos)
 	{
 		if (list->tab[j] < list->tab[lis_pos] && tab[j] + 1 > tab[lis_pos])
-			{
-				tab_lis[i] = list->tab[j];
-				tab[lis_pos] = tab[j] + 1;
-				i++;
-			}
+		{
+			tab_lis[i] = list->tab[j];
+			tab[lis_pos] = tab[j] + 1;
+			i++;
+		}
 		j++;
 	}
 	tab_lis[i] = list->tab[lis_pos];
@@ -78,14 +78,15 @@ int	*find_lis(t_list *list, t_list **list_a)
 		i++;
 	}
 	(*list_a)->size_lis = tab[lis_pos(i, tab)];
-	return (lis_value(list ,tab, lis_pos(i, tab)));
+	return (lis_value(list, tab, lis_pos(i, tab)));
 }
 
 void	sort_all(int ac, char **av)
 {
 	int		value;
-	t_list *list_a;
-	t_list *list_b;
+	t_list	*list_a;
+	t_list	*list_b;
+
 	list_a = ft_list_push_strs(ac, av);
 	list_b = NULL;
 	if (init_tab(ac, av, &list_a))

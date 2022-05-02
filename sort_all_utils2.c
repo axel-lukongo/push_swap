@@ -6,17 +6,17 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/01 23:52:10 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:10:12 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void find_sempai(t_list **list_a, t_list **list_b)
+void	find_sempai(t_list **list_a, t_list **list_b)
 {
-	int	i;
-	t_list *tmp;
-	t_list *tmp2;
+	int		i;
+	t_list	*tmp;
+	t_list	*tmp2;
 
 	tmp = *list_a;
 	tmp2 = *list_b;
@@ -27,12 +27,16 @@ void find_sempai(t_list **list_a, t_list **list_b)
 		while (tmp)
 		{
 			if (tmp->value > tmp2->value)
-				if(tmp->value - tmp2->value > 0)
+			{
+				if (tmp->value - tmp2->value > 0)
+				{
 					if (tmp->value - tmp2->value < i)
 					{
 						tmp2->sempai = tmp->value;
 						i = tmp->value - tmp2->value;
 					}
+				}
+			}
 			tmp = tmp->next;
 		}
 		tmp2 = tmp2->next;
@@ -41,13 +45,13 @@ void find_sempai(t_list **list_a, t_list **list_b)
 	}
 }
 
-int search_value(t_list **list_a, t_list **list_b)
+int	search_value(t_list **list_a, t_list **list_b)
 {
-	t_list *tmp;
-	t_list *tmp2;
-	int	i;
-	int value;
-	
+	t_list	*tmp;
+	t_list	*tmp2;
+	int		i;
+	int		value;
+
 	i = 2147483647;
 	tmp = *list_a;
 	tmp2 = *list_b;
@@ -57,11 +61,13 @@ int search_value(t_list **list_a, t_list **list_b)
 		while (tmp)
 		{
 			if (tmp2->sempai == tmp->value)
+			{
 				if (i < (tmp2->cost_move + tmp->cost_move))
 				{
 					i = tmp2->cost_move + tmp->cost_move;
 					value = tmp2->value;
-				} 
+				}
+			}
 			tmp = tmp->next;
 		}
 		tmp2 = tmp2->next;
@@ -69,7 +75,7 @@ int search_value(t_list **list_a, t_list **list_b)
 	return (value);
 }
 
-void shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
+void	shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
 {
 	if ((*list_b)->index > ft_list_size(*list_b) / 2)
 		while ((*list_b)->value != value_b)
@@ -79,36 +85,40 @@ void shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
 			sort_r(list_b, 1, 'b');
 	if ((*list_a)->index > ft_list_size(*list_a) / 2)
 		while ((*list_a)->value != value_a)
-			sort_rr(list_a,1, 'a');
+			sort_rr(list_a, 1, 'a');
 	else
 		while ((*list_a)->value != value_a)
 			sort_r(list_a, 1, 'a');
 }
 
-void shift_elem(t_list **list_a, t_list **list_b, int value_a, int value_b)
+void	shift_elem(t_list **list_a, t_list **list_b, int value_a, int value_b)
 {
 	if ((*list_a)->index > ft_list_size(*list_a) / 2
-	&& (*list_b)->index > ft_list_size(*list_b) / 2)
+		&& (*list_b)->index > ft_list_size(*list_b) / 2)
+	{
 		while ((*list_b)->value != value_b && (*list_a)->value != value_a)
 		{
-				sort_rr(list_b, 0, 'r');			
-				sort_rr(list_a,1, 'r');
+			sort_rr(list_b, 0, 'r');
+			sort_rr(list_a, 1, 'r');
 		}
+	}
 	else if ((*list_a)->index < ft_list_size(*list_a) / 2
-	&& (*list_b)->index < ft_list_size(*list_b) / 2)
+		&& (*list_b)->index < ft_list_size(*list_b) / 2)
+	{
 		while ((*list_b)->value != value_b && (*list_a)->value != value_a)
 		{
-				sort_r(list_a, 0, 'r');
-				sort_r(list_b, 1, 'r');
+			sort_r(list_a, 0, 'r');
+			sort_r(list_b, 1, 'r');
 		}
+	}
 	shift_elem2(list_a, list_b, value_a, value_b);
 }
 
-void move_elem(t_list **list_a, t_list **list_b, int value)
+void	move_elem(t_list **list_a, t_list **list_b, int value)
 {
-	t_list *tmp;
-	t_list *tmp2;
-	int	i;
+	t_list	*tmp;
+	t_list	*tmp2;
+	int		i;
 
 	i = 0;
 	tmp = *list_a;
@@ -129,13 +139,13 @@ void move_elem(t_list **list_a, t_list **list_b, int value)
 	shift_elem(list_a, list_b, tmp->value, value);
 }
 
-void send_to_a(t_list **list_a, t_list **list_b)
+void	send_to_a(t_list **list_a, t_list **list_b)
 {
-	int	value;
-	int	smallest;
-	int	i;
+	int		value;
+	int		smallest;
+	int		i;
 	t_list	*tmp;
-	
+
 	i = 0;
 	while (*list_b)
 	{

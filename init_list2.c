@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:49:46 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/29 21:57:52 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:01:37 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	smallest_value(t_list *list)
 {
-	int value;
-	
+	int	value;
+
 	value = list->value;
 	while (list)
 	{
@@ -28,9 +28,9 @@ int	smallest_value(t_list *list)
 
 int	cost_move_a(t_list **list_a)
 {
-	int	i;
-	int	size;
-	t_list *tmp;
+	int		i;
+	int		size;
+	t_list	*tmp;
 
 	tmp = *list_a;
 	i = 0;

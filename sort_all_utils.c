@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 01:12:20 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:03:27 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  */
 void	pb_condition(t_list **list_a, t_list **list_b, int value)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *list_a;
 	while (tmp && tmp->value != value)
@@ -52,23 +52,23 @@ void	pb_condition(t_list **list_a, t_list **list_b, int value)
  */
 void	send_to_b(t_list **list_a, t_list **list_b, int *tab, int size_lis)
 {
-	int	j;
-	t_list *tmp;
+	int		j;
+	t_list	*tmp;
 
 	tmp = (*list_a);
 	j = 0;
 	while (tmp)
 	{
-			while (j < size_lis && tab[j] != tmp->value)
-				j++;
-			if (j >= size_lis)
-			{
-				cost_move_a(list_a);
-				pb_condition(list_a, list_b, tmp->value);
-				tmp = *list_a;
-			}
-			else
-				 tmp = tmp->next;
-			j = 0;
+		while (j < size_lis && tab[j] != tmp->value)
+			j++;
+		if (j >= size_lis)
+		{
+			cost_move_a(list_a);
+			pb_condition(list_a, list_b, tmp->value);
+			tmp = *list_a;
+		}
+		else
+			tmp = tmp->next;
+		j = 0;
 	}
 }

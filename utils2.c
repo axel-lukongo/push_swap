@@ -6,28 +6,29 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/04/25 22:18:50 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:18:25 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int ft_list_size(t_list *begin_list)
+int	ft_list_size(t_list *begin_list)
 {
-	int count;
+	int	count;
+
 	count = 0;
 	while (begin_list != NULL)
 	{
 		begin_list = begin_list->next;
 		count++;
 	}
-	return(count);
+	return (count);
 }
 
 int	check_sort(t_list **list)
 {
-	t_list *tmp;
-	t_list *tmp2;
+	t_list	*tmp;
+	t_list	*tmp2;
 
 	tmp = (*list);
 	tmp2 = tmp;
@@ -44,39 +45,15 @@ int	check_sort(t_list **list)
 	}
 	return (1);
 }
-/*
-void	ft_sort_int_tab(int *tab, int size)
-{
-	int	i;
-	int	n;
-	int	swap;
 
-	i = 0;
-	n = i + 1;
-	while (i < size - 1)
-	{
-		if (tab[n] < tab[i])
-		{
-			swap = tab[i];
-			tab[i] = tab[n];
-			tab[n] = swap;
-			i = 0;
-			n = i + 1;
-		}
-		else
-		{
-			i++;
-			n = i + 1;
-		}
-	}
-}
-*/
-t_list *ft_create_elem(int value)
+t_list	*ft_create_elem(int value)
 {
-	t_list *pwd;
-	if(!(pwd = malloc(sizeof(t_list))))
-		return(0);
+	t_list	*pwd;
+
+	pwd = malloc(sizeof(t_list));
+	if (!pwd)
+		return (0);
 	pwd -> next = NULL;
 	pwd -> value = value;
-	return(pwd);
+	return (pwd);
 }

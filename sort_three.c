@@ -6,13 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 18:38:43 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 00:59:04 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:13:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void first_case(t_list **list)
+void	first_case(t_list **list)
 {
 	int	value1;
 	int	value2;
@@ -22,15 +22,15 @@ void first_case(t_list **list)
 	if (value1 < 0)
 		sort_s(list, 'a');
 	else if (value1 > value2)
-		{
-			sort_s(list, 'a');
-			sort_rr(list, 1, 'a');
-		}
+	{
+		sort_s(list, 'a');
+		sort_rr(list, 1, 'a');
+	}
 	else if (value1 < value2)
 		sort_r(list, 1, 'a');
 }
 
-void other_case(t_list **list)
+void	other_case(t_list **list)
 {
 	int	value;
 
@@ -46,7 +46,7 @@ void other_case(t_list **list)
 	}
 }
 
-void three_value(t_list **list)
+void	three_value(t_list **list)
 {
 	t_list	*tmp;
 
