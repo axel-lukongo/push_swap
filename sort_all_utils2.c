@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:10:12 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:33:54 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,36 +43,6 @@ void	find_sempai(t_list **list_a, t_list **list_b)
 		tmp = *list_a;
 		i = 2147483647;
 	}
-}
-
-int	search_value(t_list **list_a, t_list **list_b)
-{
-	t_list	*tmp;
-	t_list	*tmp2;
-	int		i;
-	int		value;
-
-	i = 2147483647;
-	tmp = *list_a;
-	tmp2 = *list_b;
-	value = tmp2->value;
-	while (tmp2)
-	{
-		while (tmp)
-		{
-			if (tmp2->sempai == tmp->value)
-			{
-				if (i < (tmp2->cost_move + tmp->cost_move))
-				{
-					i = tmp2->cost_move + tmp->cost_move;
-					value = tmp2->value;
-				}
-			}
-			tmp = tmp->next;
-		}
-		tmp2 = tmp2->next;
-	}
-	return (value);
 }
 
 void	shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
@@ -152,7 +122,7 @@ void	send_to_a(t_list **list_a, t_list **list_b)
 		find_sempai(list_a, list_b);
 		cost_move_a(list_a);
 		cost_move_a(list_b);
-		value = search_value(list_a, list_b);
+		value = search_value(list_a, list_b, 2147483647);
 		move_elem(list_a, list_b, value);
 		sort_p(list_a, list_b, 'a');
 	}

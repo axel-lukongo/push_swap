@@ -6,11 +6,39 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:18:25 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:34:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+int	search_value(t_list **list_a, t_list **list_b, int i)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+	int		value;
+
+	tmp = *list_a;
+	tmp2 = *list_b;
+	value = tmp2->value;
+	while (tmp2)
+	{
+		while (tmp)
+		{
+			if (tmp2->sempai == tmp->value)
+			{
+				if (i < (tmp2->cost_move + tmp->cost_move))
+				{
+					i = tmp2->cost_move + tmp->cost_move;
+					value = tmp2->value;
+				}
+			}
+			tmp = tmp->next;
+		}
+		tmp2 = tmp2->next;
+	}
+	return (value);
+}
 
 int	ft_list_size(t_list *begin_list)
 {

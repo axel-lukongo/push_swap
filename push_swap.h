@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:22:21 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:33:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void	sort_all(int ac, char **av);
 void	send_to_b(t_list **list_a, t_list **list_b, int	*tab, int size_lis);
 int		smallest_value(t_list *list);
 void	send_to_a(t_list **list_a, t_list **list_b);
+int	search_value(t_list **list_a, t_list **list_b, int i);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
