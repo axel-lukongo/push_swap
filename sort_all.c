@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:11:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:53:22 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,11 @@ void	sort_all(int ac, char **av)
 
 	list_a = ft_list_push_strs(ac, av);
 	list_b = NULL;
-	if (init_tab(ac, av, &list_a))
+	value = 0;
+	if (init_tab(ac, av, &list_a) != 0)
 	{
 		list_a->tab_lis = find_lis(list_a, &list_a);
-		if (list_a->tab_lis)
+		if (list_a->tab_lis != 0)
 		{
 			value = list_a->value;
 			send_to_b(&list_a, &list_b, list_a->tab_lis, list_a->size_lis);
