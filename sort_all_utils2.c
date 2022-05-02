@@ -6,44 +6,11 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:33:54 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:49:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	find_sempai(t_list **list_a, t_list **list_b)
-{
-	int		i;
-	t_list	*tmp;
-	t_list	*tmp2;
-
-	tmp = *list_a;
-	tmp2 = *list_b;
-	i = 2147483647;
-	tmp2->sempai = smallest_value(tmp);
-	while (tmp2)
-	{
-		while (tmp)
-		{
-			if (tmp->value > tmp2->value)
-			{
-				if (tmp->value - tmp2->value > 0)
-				{
-					if (tmp->value - tmp2->value < i)
-					{
-						tmp2->sempai = tmp->value;
-						i = tmp->value - tmp2->value;
-					}
-				}
-			}
-			tmp = tmp->next;
-		}
-		tmp2 = tmp2->next;
-		tmp = *list_a;
-		i = 2147483647;
-	}
-}
 
 void	shift_elem2(t_list **list_a, t_list **list_b, int value_a, int value_b)
 {
@@ -109,6 +76,28 @@ void	move_elem(t_list **list_a, t_list **list_b, int value)
 	shift_elem(list_a, list_b, tmp->value, value);
 }
 
+void	sort_end(t_list **list_a)
+{
+	int		smallest;
+	t_list	*tmp;
+	int		i;
+
+	i = 0;
+	smallest = smallest_value(*list_a);
+	tmp = (*list_a);
+	while (tmp->value != smallest)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	if (i > ft_list_size(*list_a) / 2)
+		while ((*list_a)->value != smallest)
+			sort_rr(list_a, 1, 'a');
+	else
+		while ((*list_a)->value != smallest)
+			sort_r(list_a, 1, 'a');
+}
+
 void	send_to_a(t_list **list_a, t_list **list_b)
 {
 	int		value;
@@ -126,17 +115,5 @@ void	send_to_a(t_list **list_a, t_list **list_b)
 		move_elem(list_a, list_b, value);
 		sort_p(list_a, list_b, 'a');
 	}
-	smallest = smallest_value(*list_a);
-	tmp = (*list_a);
-	while (tmp->value != smallest)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	if (i > ft_list_size(*list_a) / 2)
-		while ((*list_a)->value != smallest)
-			sort_rr(list_a, 1, 'a');
-	else
-		while ((*list_a)->value != smallest)
-			sort_r(list_a, 1, 'a');
+	sort_end(list_a);
 }

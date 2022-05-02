@@ -6,11 +6,46 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:03:27 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:50:15 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	find_sempai_utils(t_list **tmp, t_list **tmp2, int i)
+{
+	while (*tmp)
+	{
+		if ((*tmp)->value > (*tmp2)->value)
+		{
+			if ((*tmp)->value - (*tmp2)->value > 0)
+			{
+				if ((*tmp)->value - (*tmp2)->value < i)
+				{
+					(*tmp2)->sempai = (*tmp)->value;
+					i = (*tmp)->value - (*tmp2)->value;
+				}
+			}
+		}
+		*tmp = (*tmp)->next;
+	}
+}
+
+void	find_sempai(t_list **list_a, t_list **list_b)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *list_a;
+	tmp2 = *list_b;
+	tmp2->sempai = smallest_value(tmp);
+	while (tmp2)
+	{
+		find_sempai_utils(&tmp, &tmp2, 2147483647);
+		tmp2 = tmp2->next;
+		tmp = *list_a;
+	}
+}
 
 /**
  * @brief 
