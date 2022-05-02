@@ -6,35 +6,34 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:02:10 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:22:21 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-#include"libft/libft.h"
-#include"ft_printf/ft_printf.h"
+# define PUSH_SWAP_H
+# include"libft/libft.h"
+# include"ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
-	struct s_list *next;
-	int value;
-	int	sempai;
-	int	distance;
-	int	cost_move;
-	int	*tab;
-	int	*tab_lis;
-	int	size_lis;
-	int	index;
-} t_list;
+	struct s_list	*next;
+	int				value;
+	int				sempai;
+	int				distance;
+	int				cost_move;
+	int				*tab;
+	int				*tab_lis;
+	int				size_lis;
+	int				index;
+}	t_list;
 
 int		check_digit(int ac, char **av);
 void	init_list(t_list **list, int ac, char **av);
 void	print_list(t_list *beta);
 void	free_list(t_list *list, int value, int flag);
 t_list	*ft_create_elem(int value);
-t_list	*ft_list_push_strs(int size,char **strs);
+t_list	*ft_list_push_strs(int size, char **strs);
 t_list	*ft_list_push_back(t_list **begin_list, t_list *list);
 t_list	*ft_list_push_front(t_list **begin_list, t_list *list);
 int		check_content(int ac, char **av);
