@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:53:22 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:38:50 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,30 @@ int	*init_to_one(int *tab, int size)
 	return (tab);
 }
 
-int	*lis_value(t_list *list, int *tab, int lis_pos)
+int	*lis_value(t_list *list, int *tab)
 {
-	int	j;
 	int	*tab_lis;
 	int	i;
+	int	biggest_lis;
 
-	tab_lis = malloc(sizeof(int) * lis_pos + 1);
-	if (!tab_lis)
-		return (0);
-	tab[lis_pos] = 1;
-	j = 0;
 	i = 0;
-	while (j < lis_pos)
+	biggest_lis = 0;
+	while (i < ft_list_size(list))
 	{
-		if (list->tab[j] < list->tab[lis_pos] && tab[j] + 1 > tab[lis_pos])
-		{
-			tab_lis[i] = list->tab[j];
-			tab[lis_pos] = tab[j] + 1;
-			i++;
-		}
-		j++;
+		if (tab[i] > biggest_lis)
+			biggest_lis = tab[i];
+		i++;
 	}
-	tab_lis[i] = list->tab[lis_pos];
+	tab_lis = malloc(sizeof(int) * biggest_lis);
+	while (biggest_lis > 0)
+	{
+		i--;
+		if (tab[i] == biggest_lis)
+		{
+			biggest_lis--;
+			tab_lis[biggest_lis] = list->tab[i];
+		}
+	}
 	free(tab);
 	return (tab_lis);
 }
@@ -78,7 +79,7 @@ int	*find_lis(t_list *list, t_list **list_a)
 		i++;
 	}
 	(*list_a)->size_lis = tab[lis_pos(i, tab)];
-	return (lis_value(list, tab, lis_pos(i, tab)));
+	return (lis_value(list, tab));
 }
 
 void	sort_all(int ac, char **av)
@@ -100,7 +101,6 @@ void	sort_all(int ac, char **av)
 			send_to_a(&list_a, &list_b);
 		}
 	}
-	print_list(list_a);
 	free_list(list_a, value, 1);
 	return ;
 }

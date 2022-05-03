@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:54:11 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:38:42 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	shift_elem(t_list **list_a, t_list **list_b, int value_a, int value_b)
 			sort_rr(list_a, 1, 'r');
 		}
 	}
-	else if ((*list_a)->index < ft_list_size(*list_a) / 2
-		&& (*list_b)->index < ft_list_size(*list_b) / 2)
+	else if ((*list_a)->index <= ft_list_size(*list_a) / 2
+		&& (*list_b)->index <= ft_list_size(*list_b) / 2)
 	{
 		while ((*list_b)->value != value_b && (*list_a)->value != value_a)
 		{
@@ -73,7 +73,7 @@ void	move_elem(t_list **list_a, t_list **list_b, int value)
 		tmp = tmp->next;
 	}
 	(*list_a)->index = i;
-	shift_elem(list_a, list_b, tmp->value, value);
+	shift_elem(list_a, list_b, tmp2->sempai, value);
 }
 
 void	sort_end(t_list **list_a)

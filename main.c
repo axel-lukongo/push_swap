@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:01:57 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:44:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	main(int ac, char **av)
 {
 	t_list	*list_a;
 
-	if (ac < 2 || check_digit(ac, av) == 0 || check_content(ac, av) == 0)
+	/*if (ac < 2 || check_digit(ac, av) == 0 || check_content(ac, av) == 0)
 	{
 		ft_printf("Error\n");
 		return (0);
-	}
+	}*/
 	if (ac == 4)
 	{
 		list_a = ft_list_push_strs(ac, av);
