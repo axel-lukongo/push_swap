@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/03 18:38:42 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:49:07 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	move_elem(t_list **list_a, t_list **list_b, int value)
 	while (tmp2->value != value)
 	{
 		i++;
-		tmp2 = tmp->next;
+		tmp2 = tmp2->next;
 	}
 	(*list_b)->index = i;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:02:03 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:14:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ int	check_content(int ac, char **av)
 		while (j < ac)
 		{
 			if (value == ft_atoi(av[j]))
+			{
+				printf("doublons\n");
 				return (0);
+			}
 			j++;
 		}
 		i++;
