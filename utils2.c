@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 15:06:22 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/04 16:10:01 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	search_value(t_list **list_a, t_list **list_b, int i)
 	t_list	*tmp;
 	t_list	*tmp2;
 	int		value;
-	int		tes;
 
 	tmp = *list_a;
 	tmp2 = *list_b;
@@ -32,8 +31,7 @@ int	search_value(t_list **list_a, t_list **list_b, int i)
 		{
 			if (tmp2->sempai == tmp->value)
 			{
-				tes = tmp2->cost_move + tmp->cost_move;
-				if (i >= tes)
+				if (i >= tmp2->cost_move + tmp->cost_move)
 				{
 					i = tmp2->cost_move + tmp->cost_move;
 					value = tmp2->value;
