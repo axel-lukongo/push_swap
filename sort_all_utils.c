@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:50:15 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/04 19:32:08 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	find_sempai(t_list **list_a, t_list **list_b)
 
 	tmp = *list_a;
 	tmp2 = *list_b;
-	tmp2->sempai = smallest_value(tmp);
 	while (tmp2)
 	{
+		tmp2->sempai = smallest_value(tmp);
 		find_sempai_utils(&tmp, &tmp2, 2147483647);
 		tmp2 = tmp2->next;
 		tmp = *list_a;

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 16:10:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/04 18:48:56 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_list	*ft_create_elem(int value)
 {
 	t_list	*pwd;
 
-	pwd = malloc(sizeof(t_list));
+	pwd = malloc(sizeof(t_list) * 2);
 	if (!pwd)
 		return (0);
 	pwd -> next = NULL;
