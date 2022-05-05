@@ -6,13 +6,12 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 12:46:40 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:55:22 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include"libft/libft.h"
 # include"ft_printf/ft_printf.h"
 
 typedef struct s_list
