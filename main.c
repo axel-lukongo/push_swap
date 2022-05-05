@@ -6,17 +6,17 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 12:42:25 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:24:06 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	long	i;
-	int		signe;
-	int		nbr;
+	long			i;
+	int				signe;
+	long long int	nbr;
 
 	nbr = 0;
 	signe = 1;
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 {
 	t_list	*list_a;
 
-	if (ac < 2 || check_digit(ac, av) == 0 || check_content(ac, av) == 0)
+	if (check_digit(ac, av) == 0 || check_content(ac, av) == 0)
 	{
 		ft_printf("Error\n");
 		return (0);

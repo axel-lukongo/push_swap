@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 13:05:18 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 17:23:57 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	check_digit(int ac, char **av)
 
 int	check_content(int ac, char **av)
 {
-	int	i;
-	int	value;
-	int	j;
+	int				i;
+	long long int	value;
+	int				j;
 
 	i = 1;
 	while (i < ac)
