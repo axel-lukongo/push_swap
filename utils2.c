@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 18:48:56 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:07:23 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,20 @@ int	check_sort(t_list **list)
 	t_list	*tmp2;
 
 	tmp = (*list);
-	tmp2 = tmp;
+	tmp2 = tmp->next;
 	while (tmp->next)
 	{
-		if (tmp2->next == NULL)
+		if (tmp2 == NULL)
 		{
 			tmp = tmp->next;
-			tmp2 = tmp;
+			tmp2 = tmp->next;
 		}
-		tmp2 = tmp2->next;
-		if (tmp->value > tmp2->value)
-			return (0);
+		if (tmp2)
+		{
+			if (tmp->value > tmp2->value)
+				return (0);
+			tmp2 = tmp2->next;
+		}
 	}
 	return (1);
 }
