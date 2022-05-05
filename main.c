@@ -6,11 +6,21 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 17:24:06 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 21:10:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+int	ft_strlen_tab(char **strs)
+{
+	int	i;
+
+	i = 0;
+	while (ft_strlen(strs[i]))
+		i++;
+	return (i);
+}
 
 long long	ft_atoi(const char *str)
 {
@@ -43,16 +53,22 @@ long long	ft_atoi(const char *str)
 int	main(int ac, char **av)
 {
 	t_list	*list_a;
+	char	**strs;
+	int		size;
 
-	if (check_digit(ac, av) == 0 || check_content(ac, av) == 0)
+	strs = check_digit(ac, av);
+	size = ft_strlen_tab(strs) + 1;
+	//printf("size = %d\n", size);
+	if (check_content(size, strs) == 0)
 	{
 		ft_printf("Error\n");
 		return (0);
 	}
-	if (ac == 4 || ac == 3)
+	if (size == 4 || size == 3)
 	{
-		list_a = ft_list_push_strs(ac, av);
-		if (ac == 3)
+		list_a = ft_list_push_strs(size, strs);
+		print_list(list_a);
+		if (size == 3)
 		{
 			if (check_sort(&list_a) == 0)
 				sort_s(&list_a, 'a');
@@ -61,7 +77,7 @@ int	main(int ac, char **av)
 			three_value(&list_a);
 		free_list(list_a, 0, 0);
 	}
-	else if (ac >= 5)
-		sort_all(ac, av);
+	else if (size >= 5)
+		sort_all(size + 1, strs);
 	return (1);
 }

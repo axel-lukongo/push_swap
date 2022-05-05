@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 19:32:42 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:47:57 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,9 @@ void	sort_all(int ac, char **av)
 	t_list	*list_a;
 	t_list	*list_b;
 
+	printf("strs= %s", av[0]);
 	list_a = ft_list_push_strs(ac, av);
+	print_list(list_a);
 	list_b = NULL;
 	value = 0;
 	if (init_tab(ac, av, &list_a) != 0)

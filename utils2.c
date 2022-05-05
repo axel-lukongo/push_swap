@@ -6,18 +6,37 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 12:39:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:26:03 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
+int	ft_digit(int ac, char **av)
+{
+	int		i;
+	char	c;
+
+	while (--ac)
+	{
+		i = -1;
+		while (av[ac][++i])
+		{
+			c = av[ac][i];
+			if ((c < '0' || c > '9') && (c != '-' && c != ' '))
+				return (1);
+		}
+	}
+	return (0);
+}
+
 int	ft_isdigit(int c)
 {
-	if ((c >= 48 && c <= 57) || c == 45)
+	if ((c >= 48 && c <= 57) || c == 45 || c == 34)
 		return (1);
 	else
 		return (0);
+	
 }
 
 /* i should calculat the distance from the top and the bottom of the value in

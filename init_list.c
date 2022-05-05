@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 19:03:03 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 21:09:44 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ t_list	*ft_list_push_strs(int size, char **strs)
 
 	i = 0;
 	last_element = 0;
+	printf("ici\n");
 	while (i < size)
 	{
 		size--;
 		element = ft_create_elem(ft_atoi(strs[size]));
+		printf("elem = %d\n", element->value);
 		element->sempai = 0;
 		element->next = last_element;
 		last_element = element;

@@ -6,16 +6,33 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 17:23:57 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 21:11:13 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	check_digit(int ac, char **av)
+ int	check_n_of_words(const char *s, char sep)
 {
 	int	i;
+	int	n;
+
+	i = 0;
+	n = 0;
+	while (s[i])
+	{
+		if (s[i] != sep && (s[i + 1] == sep || s[i + 1] == '\0'))
+			n++;
+		i++;
+	}
+	return (n);
+}
+
+char	**check_digit(int ac, char **av)
+{
+	/*int	i;
 	int	j;
+	char **str;
 
 	j = 0;
 	i = 1;
@@ -30,7 +47,30 @@ int	check_digit(int ac, char **av)
 			i++;
 		}
 	}
-	return (1);
+	return (1);*/
+	char	**sa;
+	char	*s;
+	int		i;
+
+	if (ft_digit(ac, av))
+		return (NULL);
+	s = malloc(sizeof(char));
+	if (!s)
+		return (NULL);
+	s[0] = '\0';
+	i = 0;
+	while (++i < ac)
+	{
+		if (!av[i])
+			break ;
+		s = ft_strjoin(s, av[i]);
+		if (!s)
+			return (NULL);
+	}
+	sa = ft_strsplit(s, ' ');
+	if (!sa)
+		return (NULL);
+	return (sa);
 }
 
 int	check_content(int ac, char **av)
@@ -39,7 +79,7 @@ int	check_content(int ac, char **av)
 	long long int	value;
 	int				j;
 
-	i = 1;
+	i = 0;
 	while (i < ac)
 	{
 		j = i + 1;
