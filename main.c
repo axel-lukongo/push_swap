@@ -6,11 +6,20 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 00:06:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:29:21 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+void free_strs(char **strs, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+		free(strs[i++]);
+}
 
 int	ft_strlen_tab(char **strs)
 {
@@ -66,7 +75,6 @@ int	main(int ac, char **av)
 	if (size == 4 || size == 3)
 	{
 		list_a = ft_list_push_strs(size, strs);
-		print_list(list_a);
 		if (size == 3)
 		{
 			if (check_sort(&list_a) == 0)
@@ -78,5 +86,6 @@ int	main(int ac, char **av)
 	}
 	else if (size >= 5)
 		sort_all(size, strs);
+	free_strs(strs, size);
 	return (1);
 }

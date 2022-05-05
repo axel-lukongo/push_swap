@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:36:15 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 20:53:31 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:31:04 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,13 @@ char	*ft_strjoin(char const *s1, char const*s2)
 	i = ft_strlen(s1) + ft_strlen(s2);
 	if (s1 && s2)
 	{
-		str = malloc(sizeof(char) * i + 1);
+		str = malloc(sizeof(char) * i + 2);
 		if (!str)
 			return (0);
 		ft_strcpy(str, s1);
 		ft_strcat(str, s2);
+		str[i] = ' ';
+		str[i + 1] = '\0';
 		return (str);
 	}
 	else

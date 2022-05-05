@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 00:06:51 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:35:10 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ char	**check_digit(int ac, char **av)
 			return (NULL);
 	}
 	sa = ft_strsplit(s, ' ');
+	free(s);
 	if (!sa)
 		return (NULL);
 	return (sa);

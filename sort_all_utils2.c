@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 13:49:07 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 00:48:30 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,7 @@ void	sort_end(t_list **list_a)
 void	send_to_a(t_list **list_a, t_list **list_b)
 {
 	int		value;
-	int		i;
 
-	i = 0;
 	while (*list_b)
 	{
 		find_sempai(list_a, list_b);

@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 00:14:57 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:30:16 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ t_list	*ft_list_push_strs(int size, char **strs)
 {
 	t_list	*element;
 	t_list	*last_element;
-	int		i;
 
-	i = 0;
 	last_element = 0;
 	while (size)
 	{
@@ -28,8 +26,8 @@ t_list	*ft_list_push_strs(int size, char **strs)
 		element->next = last_element;
 		last_element = element;
 	}
-	last_element = element;
-	element = element->next;
+	last_element = NULL;
+	element = element;
 	free(last_element);
 	return (element);
 }
