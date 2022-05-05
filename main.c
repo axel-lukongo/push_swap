@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 21:10:44 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 00:06:31 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	main(int ac, char **av)
 
 	strs = check_digit(ac, av);
 	size = ft_strlen_tab(strs) + 1;
-	//printf("size = %d\n", size);
 	if (check_content(size, strs) == 0)
 	{
 		ft_printf("Error\n");
@@ -78,6 +77,6 @@ int	main(int ac, char **av)
 		free_list(list_a, 0, 0);
 	}
 	else if (size >= 5)
-		sort_all(size + 1, strs);
+		sort_all(size, strs);
 	return (1);
 }

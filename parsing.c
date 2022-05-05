@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 21:11:13 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 00:06:51 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ int	check_content(int ac, char **av)
 	int				j;
 
 	i = 0;
-	while (i < ac)
+	while (i < ac - 1)
 	{
 		j = i + 1;
 		value = ft_atoi(av[i]);
 		if ((value > 2147483647) || (value < -2147483647))
 			return (0);
-		while (j < ac)
+		while (j < ac - 1)
 		{
 			if (value == ft_atoi(av[j]))
 				return (0);
