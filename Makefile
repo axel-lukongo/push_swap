@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/05/04 18:11:43 by alukongo         ###   ########.fr        #
+#    Updated: 2022/05/05 12:38:11 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ MANDATORY = parsing.c\
 			utils2.c\
 			sort_three.c\
 			init_list2.c\
-			sort_five.c\
 			sort_all.c\
 			sort_all_utils.c\
 			sort_all_utils2.c\
@@ -41,9 +40,8 @@ CFLAGS	= -g -Wall -Werror -Wextra
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${MANDATORY_OBJS}
-		make -C libft
 		make -C ft_printf
-		${CC} ${CFLAGS} ${MANDATORY_SRCS} libft/libft.a ft_printf/libftprintf.a -o ${NAME}
+		${CC} ${CFLAGS} ${MANDATORY_SRCS} ft_printf/libftprintf.a -o ${NAME}
 
 all: ${NAME}
 
@@ -52,7 +50,6 @@ clean:
 
 fclean: clean
 	make fclean -C ft_printf
-	make fclean -C libft
 	${RM} ${NAME}
 
 re: fclean all

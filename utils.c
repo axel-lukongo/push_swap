@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:15:14 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:26:26 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,22 @@ void	print_list(t_list *beta)
 	}
 	printf("NULL");
 	printf("\n");
+}
+
+int	find_smallest(t_list *list)
+{
+	t_list	*tmp;
+	int		value;
+
+	tmp = list;
+	value = tmp->value;
+	while (tmp)
+	{
+		if (value > tmp->value)
+			value = tmp->value;
+		tmp = tmp->next;
+	}
+	return (value);
 }
 
 void	free_list(t_list *list, int value, int flag)

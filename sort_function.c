@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:37:58 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/02 14:13:30 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:46:58 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ void	sort_s(t_list **list, char c)
 	*list = list2;
 	ft_printf("s%c\n", c);
 }
-/*
-t_list	cort_ss(t_list *list_a, t_list *list_b)
-{
-	list_a = sort_s(&list_a);
-	list_b = sort_s(&list_b);
-	return (list_a);
-}*/
 
 void	sort_p(t_list **list1, t_list **list2, char c)
 {
