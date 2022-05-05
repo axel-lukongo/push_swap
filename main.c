@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 01:29:21 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:42:21 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void free_strs(char **strs, int size)
 	i = 0;
 	while (i < size)
 		free(strs[i++]);
+	free(strs);
 }
 
 int	ft_strlen_tab(char **strs)

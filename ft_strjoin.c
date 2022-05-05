@@ -6,14 +6,14 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:36:15 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 01:31:04 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:49:01 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-static char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ static char	*ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
-static char	*ft_strcat(char *dest, const char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
@@ -56,7 +56,7 @@ static char	*ft_strcat(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const*s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -71,6 +71,7 @@ char	*ft_strjoin(char const *s1, char const*s2)
 		ft_strcat(str, s2);
 		str[i] = ' ';
 		str[i + 1] = '\0';
+		free(s1);
 		return (str);
 	}
 	else

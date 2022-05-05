@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 20:53:41 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:49:51 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void		find_sempai(t_list **list_a, t_list **list_b);
 int			ft_isdigit(int c);
 long long	ft_atoi(const char *str);
 char		**ft_strsplit(char *s, char c);
-char		*ft_strjoin(char const *s1, char const*s2);
-int			check_n_of_words(const char *s, char sep);
+char		*ft_strjoin(char *s1, char *s2);
+int			check_n_of_words(char *s, char sep);
 int			ft_digit(int ac, char **av);
-int			ft_strlen(const char *str);
+int			ft_strlen(char *str);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H
