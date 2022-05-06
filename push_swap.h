@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 03:10:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 14:54:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ int			check_n_of_words(char *s, char sep);
 int			ft_digit(int ac, char **av);
 int			ft_strlen(char *str);
 void		ft_error(char **strs, int size);
+void		sort_five(t_list *list_a, t_list *list_b, int size);
 #endif // !PUSH_SWAP_H#define PUSH_SWAP_H

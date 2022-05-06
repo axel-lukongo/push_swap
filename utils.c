@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/05 12:26:26 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:22:11 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int	find_smallest(t_list *list)
 	return (value);
 }
 
+/*
+when value != 0 it mean i have to free the tab
+flag = 1 it mean i want else i don't want free
+*/
 void	free_list(t_list *list, int value, int flag)
 {
 	t_list	*list2;
