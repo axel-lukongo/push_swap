@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 01:59:33 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 03:10:13 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ char	**check_digit(int ac, char **av)
 	int		i;
 
 	if (ft_digit(ac, av))
-		return (NULL);
+		ft_error(NULL, 0);
 	s = malloc(sizeof(char));
 	if (!s)
-		return (NULL);
+		ft_error(NULL, 0);
 	s[0] = '\0';
 	i = 0;
 	while (++i < ac)

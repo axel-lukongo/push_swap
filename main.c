@@ -6,11 +6,12 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 01:42:21 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 03:09:04 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
 
 void free_strs(char **strs, int size)
 {
@@ -20,6 +21,14 @@ void free_strs(char **strs, int size)
 	while (i < size)
 		free(strs[i++]);
 	free(strs);
+}
+
+void ft_error(char **strs, int size)
+{
+	if(strs)
+		free_strs(strs, size);
+	ft_printf("Error\n");
+	exit(1);
 }
 
 int	ft_strlen_tab(char **strs)
@@ -68,11 +77,8 @@ int	main(int ac, char **av)
 
 	strs = check_digit(ac, av);
 	size = ft_strlen_tab(strs) + 1;
-	if (check_content(size, strs) == 0)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
+	if (check_content(size, strs) == 0 || !strs)
+		ft_error(strs, size);
 	if (size == 4 || size == 3)
 	{
 		list_a = ft_list_push_strs(size, strs);
