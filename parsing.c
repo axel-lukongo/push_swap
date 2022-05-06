@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 01:50:25 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:59:33 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@
 
 char	**check_digit(int ac, char **av)
 {
-	/*int	i;
-	int	j;
-	char **str;
-
-	j = 0;
-	i = 1;
-	while (i < ac)
-	{
-		if (av[i][j] != '\0' && ft_isdigit((int)av[i][j]) == 0)
-			return (0);
-		j++;
-		if (av[i][j] == '\0')
-		{
-			j = 0;
-			i++;
-		}
-	}
-	return (1);*/
 	char	**sa;
 	char	*s;
 	int		i;
