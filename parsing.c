@@ -6,13 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 03:10:13 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:44:36 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
- int	check_n_of_words(char *s, char sep)
+int	check_n_of_words(char *s, char sep)
 {
 	int	i;
 	int	n;
