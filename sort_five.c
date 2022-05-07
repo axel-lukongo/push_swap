@@ -6,12 +6,18 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:39:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 15:29:32 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 12:57:55 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
+/**
+ * @brief in this funciton i check if my list has been sorted
+ * 
+ * @param list 
+ * @return int 
+ */
 int	check_sort(t_list **list)
 {
 	t_list	*tmp;
@@ -36,6 +42,15 @@ int	check_sort(t_list **list)
 	return (1);
 }
 
+/**
+ * @brief i sort when i have 4 or 5 number to sort
+ * in my conditions i write (size == 6) becausein this size
+ * i have the exec. so if a have 5 number + 1 exec, my size is 6 
+ * 
+ * @param list_a 
+ * @param list_b 
+ * @param size 
+ */
 void	sort_five(t_list *list_a, t_list *list_b, int size)
 {
 	if (size == 6)

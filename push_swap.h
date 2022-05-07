@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 16:42:25 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 14:54:18 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 12:43:47 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int			smallest_value(t_list *list);
 void		send_to_a(t_list **list_a, t_list **list_b);
 int			search_value(t_list **list_a, t_list **list_b, int i);
 void		find_sempai(t_list **list_a, t_list **list_b);
-int			ft_isdigit(int c);
+//int			ft_isdigit(int c);
 long long	ft_atoi(const char *str);
 char		**ft_strsplit(char *s, char c);
 char		*ft_strjoin(char *s1, char *s2);

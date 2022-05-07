@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:21:01 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 15:44:36 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:27:09 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ int	check_n_of_words(char *s, char sep)
 	return (n);
 }
 
+/**
+ * @brief i check if my strings is digit and i copy it on my char **sa
+ * 
+ * @param ac 
+ * @param av 
+ * @return char** 
+ */
 char	**check_digit(int ac, char **av)
 {
 	char	**sa;
@@ -56,6 +63,13 @@ char	**check_digit(int ac, char **av)
 	return (sa);
 }
 
+/**
+ * @brief i check the contenue of the argument that i receveid 
+ * 
+ * @param ac 
+ * @param av 
+ * @return int 
+ */
 int	check_content(int ac, char **av)
 {
 	int				i;

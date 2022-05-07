@@ -6,12 +6,19 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:18:13 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 15:29:26 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 12:48:38 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-
+/**
+ * @brief in this fonction i check if all my char is a digit and i return 1
+ * else 0
+ * 
+ * @param ac number of number 
+ * @param av
+ * @return int 
+ */
 int	ft_digit(int ac, char **av)
 {
 	int		i;
@@ -28,14 +35,6 @@ int	ft_digit(int ac, char **av)
 		}
 	}
 	return (0);
-}
-
-int	ft_isdigit(int c)
-{
-	if ((c >= 48 && c <= 57) || c == 45 || c == 34)
-		return (1);
-	else
-		return (0);
 }
 
 /* i should calculat the distance from the top and the bottom of the value in
@@ -71,6 +70,12 @@ int	search_value(t_list **list_a, t_list **list_b, int i)
 	return (value);
 }
 
+/**
+ * @brief in this fonction return the number of element in my list
+ * 
+ * @param begin_list my list
+ * @return int number of element
+ */
 int	ft_list_size(t_list *begin_list)
 {
 	int	count;
@@ -84,6 +89,13 @@ int	ft_list_size(t_list *begin_list)
 	return (count);
 }
 
+/**
+ * @brief in this fonction i creat i new element in my list
+ * and i initialized the value in my element
+ * 
+ * @param value 
+ * @return t_list* 
+ */
 t_list	*ft_create_elem(int value)
 {
 	t_list	*pwd;

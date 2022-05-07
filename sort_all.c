@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 20:25:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 15:22:38 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:01:43 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,14 @@ int	*find_lis(t_list *list, t_list **list_a)
 	return (lis_value(list, tab));
 }
 
+/**
+ * @brief that the fnuctino where i sort every list > 5 number
+ * i initialize my list, i find my LIS, i send every value who ain't
+ * in my LIS in stack_b, and i send the values from my stack_b to stack_a
+ * 
+ * @param ac 
+ * @param av 
+ */
 void	sort_all(int ac, char **av)
 {
 	int		value;
