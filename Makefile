@@ -6,7 +6,7 @@
 #    By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:14:48 by alukongo          #+#    #+#              #
-#    Updated: 2022/05/06 14:46:25 by alukongo         ###   ########.fr        #
+#    Updated: 2022/05/06 00:27:57 by alukongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ MANDATORY = parsing.c\
 			sort_all_utils2.c\
 			ft_split.c\
 			ft_strjoin.c\
-			sort_five.c\
 
 MANDATORY_SRCS	=	${MANDATORY}
 

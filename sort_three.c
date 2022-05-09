@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 18:38:43 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 14:02:33 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 18:44:18 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ void	other_case(t_list **list)
 	}
 }
 
-/**
- * @brief i sort for 3 number
- * 
- * @param list 
- */
 void	three_value(t_list **list)
 {
 	t_list	*tmp;

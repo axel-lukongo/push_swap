@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 13:49:46 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 13:39:01 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:01:37 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ int	smallest_value(t_list *list)
 	return (value);
 }
 
-/**
- * @brief here i calculat the cost for send the value
- * 
- * @param list_a 
- * @return int 
- */
 int	cost_move_a(t_list **list_a)
 {
 	int		i;

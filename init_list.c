@@ -6,19 +6,12 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:18:29 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 13:52:49 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 01:59:11 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-/**
- * @brief in this function i initalize my list with the value input
- * 
- * @param size 
- * @param strs 
- * @return t_list* 
- */
 t_list	*ft_list_push_strs(int size, char **strs)
 {
 	t_list	*element;
@@ -54,14 +47,6 @@ int	init_tab(int ac, char **av, t_list **list)
 	return (1);
 }
 
-/**
- * @brief i use this function for get the index of my biggest number
- * in my LIS
- * 
- * @param ac 
- * @param tab 
- * @return int 
- */
 int	lis_pos(int ac, int *tab)
 {
 	int	i;

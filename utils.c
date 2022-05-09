@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:06:28 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 12:53:23 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/05 12:26:26 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ int	find_smallest(t_list *list)
 	return (value);
 }
 
-/*
-when value != 0 it mean i have to free the tab
-flag = 1 it mean i want free else i don't want free
-*/
 void	free_list(t_list *list, int value, int flag)
 {
 	t_list	*list2;
@@ -61,13 +57,6 @@ void	free_list(t_list *list, int value, int flag)
 	free(list);
 }
 
-/**
- * @brief i creat my list with it
- * 
- * @param begin_list 
- * @param list 
- * @return t_list* 
- */
 t_list	*ft_list_push_back(t_list **begin_list, t_list *list)
 {
 	t_list	*li;
@@ -89,13 +78,6 @@ t_list	*ft_list_push_back(t_list **begin_list, t_list *list)
 	return (*begin_list);
 }
 
-/**
- * @brief i initialize the entiere of my list with this fonction
- * 
- * @param begin_list 
- * @param list 
- * @return t_list* 
- */
 t_list	*ft_list_push_front(t_list **begin_list, t_list *list)
 {
 	t_list	*li;
