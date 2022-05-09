@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:59:32 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 00:48:30 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:56:23 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,14 @@ void	move_elem(t_list **list_a, t_list **list_b, int value)
 	shift_elem(list_a, list_b, tmp2->sempai, value);
 }
 
+/**
+ * @brief when i sended all value of stack_b in a, i rra or ra
+ * while my smallest value ain't on the top of my list
+ * 
+ * @param list_a 
+ * @param list_b 
+ * @param value 
+ */
 void	sort_end(t_list **list_a)
 {
 	int		smallest;

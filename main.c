@@ -6,14 +6,13 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:24:10 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/06 03:09:04 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/06 15:37:43 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-
-void free_strs(char **strs, int size)
+void	free_strs(char **strs, int size)
 {
 	int	i;
 
@@ -23,9 +22,9 @@ void free_strs(char **strs, int size)
 	free(strs);
 }
 
-void ft_error(char **strs, int size)
+void	ft_error(char **strs, int size)
 {
-	if(strs)
+	if (strs)
 		free_strs(strs, size);
 	ft_printf("Error\n");
 	exit(1);
@@ -81,7 +80,7 @@ int	main(int ac, char **av)
 		ft_error(strs, size);
 	if (size == 4 || size == 3)
 	{
-		list_a = ft_list_push_strs(size, strs);
+		list_a = ft_list_push_strs(size - 1, strs);
 		if (size == 3)
 		{
 			if (check_sort(&list_a) == 0)

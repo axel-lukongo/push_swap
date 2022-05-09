@@ -6,11 +6,12 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/04 19:32:08 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/07 13:07:27 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	find_sempai_utils(t_list **tmp, t_list **tmp2, int i)
 {
@@ -30,6 +31,15 @@ void	find_sempai_utils(t_list **tmp, t_list **tmp2, int i)
 		*tmp = (*tmp)->next;
 	}
 }
+
+/**
+ * @brief the sempai is the value bigger than my value but the most close
+ * of my value
+ * 
+ * @param tmp 
+ * @param tmp2 
+ * @param i 
+ */
 
 void	find_sempai(t_list **list_a, t_list **list_b)
 {
@@ -56,6 +66,7 @@ void	find_sempai(t_list **list_a, t_list **list_b)
 	3) else i RA while (*list->value != value)
 	4) when the value who i want send it on the top on list i push it in list_b
  */
+
 void	pb_condition(t_list **list_a, t_list **list_b, int value)
 {
 	t_list	*tmp;
@@ -85,6 +96,7 @@ void	pb_condition(t_list **list_a, t_list **list_b, int value)
  * @param tab it contain the value of my LIS
  * @param size_lis it the length of my LIS
  */
+
 void	send_to_b(t_list **list_a, t_list **list_b, int *tab, int size_lis)
 {
 	int		j;
