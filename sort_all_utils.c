@@ -6,12 +6,11 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:24:12 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 13:07:27 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:37:04 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	find_sempai_utils(t_list **tmp, t_list **tmp2, int i)
 {
