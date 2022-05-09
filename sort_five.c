@@ -6,7 +6,7 @@
 /*   By: alukongo <alukongo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:39:27 by alukongo          #+#    #+#             */
-/*   Updated: 2022/05/07 12:57:55 by alukongo         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:25:14 by alukongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void	sort_five(t_list *list_a, t_list *list_b, int size)
 		sort_p(&list_b, &list_a, 'b');
 	three_value(&list_a);
 	send_to_a(&list_a, &list_b);
+	free_list(list_a, 0, 0);
 }
